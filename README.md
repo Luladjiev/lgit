@@ -1,8 +1,8 @@
 # Lgit
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lgit`. To experiment with that code, run `bin/console` for an interactive prompt.
+Git utility gem.
 
-TODO: Delete this and the text above, and describe your gem
+Write less do more with git.
 
 ## Installation
 
@@ -22,7 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Rebase current branch from master
+
+```shell
+lgit rebase
+```
+
+Create new branch from freshly pulled master
+
+```shell
+lgit branch <name>
+```
 
 ## Development
 
