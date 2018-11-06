@@ -25,7 +25,16 @@ module Lgit
     end
 
     def delete_branches
-      # TODO
+      `git fetch -p`      
+      `git branch -vv`
+        .split("\n")
+        .reject { |branch| branch.start_with?('*') }
+        .select { |branch| branch.include?(': gone]') }
+        .map! { |branch| branch.match(/^\s+(.*?)\s/)[1] }
+        .each do branch           
+          `git branch -D #{branch}`
+          puts "#{branch} deleted"
+        end
     end
   end
 end

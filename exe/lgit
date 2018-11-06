@@ -18,6 +18,8 @@ when 'rebase'
     exit 2
   end
   git.rebase
+when 'delete-branches'
+  git.delete_branches
 else
   puts 'Invalid command'
   exit 3

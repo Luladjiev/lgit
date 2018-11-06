@@ -34,6 +34,12 @@ Create new branch from freshly pulled master
 lgit branch <name>
 ```
 
+Delete all branches for which remotes are gone. *Use with caution!*
+
+```shell
+lgit delete-branches
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
