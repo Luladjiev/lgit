@@ -1,9 +1,11 @@
-require "lgit/version"
+require 'lgit/version'
 
 module Lgit
+  ###
+  # Git related class
   class Git
-    def refresh_master
-      `git checkout master`
+    def refresh_base(base = 'master')
+      `git checkout #{base}`
       `git pull`
     end
 
@@ -12,16 +14,16 @@ module Lgit
     end
 
     def create_branch(name)
-      if name
-        refresh_master
-        `git checkout -b #{name}`
-      end
+      return unless name
+
+      refresh_base
+      `git checkout -b #{name}`
     end
 
-    def rebase
-      refresh_master
+    def rebase(base = 'master')
+      refresh_base base
       `git checkout - `
-      `git rebase master`
+      `git rebase #{base}`
     end
 
     def delete_branches

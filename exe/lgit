@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require "lgit"
+require 'lgit'
 
 if ARGV.size.zero?
   puts 'Specify command'
@@ -14,10 +15,10 @@ when 'branch'
   git.create_branch ARGV[1]
 when 'rebase'
   if git.get_branch == 'master'
-    puts "Error: Cannot rebase master!"
+    puts 'Error: Cannot rebase master!'
     exit 2
   end
-  git.rebase
+  git.rebase ARGV[1]
 when 'delete-branches'
   git.delete_branches
 else

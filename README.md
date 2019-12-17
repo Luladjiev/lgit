@@ -22,10 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-Rebase current branch from master
+Rebase current branch from specified base or master by default
 
 ```shell
-lgit rebase
+lgit rebase [<base>]
 ```
 
 Create new branch from freshly pulled master
