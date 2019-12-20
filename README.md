@@ -28,10 +28,10 @@ Rebase current branch from specified base or master by default
 lgit rebase [<base>]
 ```
 
-Create new branch from freshly pulled master
+Create new branch from freshly pulled base or master by default
 
 ```shell
-lgit branch <name>
+lgit branch <name> [<base>]
 ```
 
 Delete all branches for which remotes are gone. *Use with caution!*

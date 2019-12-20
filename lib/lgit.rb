@@ -13,10 +13,10 @@ module Lgit
       `git name-rev --name-only HEAD`.strip
     end
 
-    def create_branch(name)
+    def create_branch(name, base = 'master')
       return unless name
 
-      refresh_base
+      refresh_base base
       `git checkout -b #{name}`
     end
 
