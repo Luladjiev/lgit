@@ -14,8 +14,8 @@ case ARGV[0]
 when 'branch'
   git.create_branch(ARGV[1], ARGV[2])
 when 'rebase'
-  if git.get_branch == 'master'
-    puts 'Error: Cannot rebase master!'
+  if git.get_branch == git.get_default_branch
+    puts "Error: Cannot rebase #{git.get_default_branch}!"
     exit 2
   end
   git.rebase ARGV[1]
