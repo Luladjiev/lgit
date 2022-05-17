@@ -1,4 +1,5 @@
 require 'lgit/version'
+require 'open3'
 
 module Lgit
   ###
@@ -16,7 +17,11 @@ module Lgit
     end
 
     def get_default_branch
-      `git name-rev --name-only HEAD`.strip
+      stdout, _, status = Open3.capture3("git symbolic-ref refs/remotes/origin/HEAD")
+
+      return `git config init.defaultBranch`.strip if status != 0
+
+      stdout.strip[20..-1]
     end
 
     def create_branch(name, base)
