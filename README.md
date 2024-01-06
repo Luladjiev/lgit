@@ -1,3 +1,7 @@
+⚠️**IMPORTANT NOTICE**⚠️
+
+This project is no longer maintained. A newer version of this tool has been developed which includes additional features and improvements. Please visit [lgit-rs](https://github.com/Luladjiev/lgit-rs)
+
 # Lgit
 
 Git utility gem.
